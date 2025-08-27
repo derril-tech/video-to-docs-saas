@@ -1,0 +1,44 @@
+# Task List
+
+- [x] Scaffold repo (frontend Next.js, backend NestJS, Python workers).
+- [x] Add .env.example, .gitignore, pre-commit hooks, CI boilerplate.
+- [x] Implement Postgres schema (orgs, users, memberships, api_keys, projects, documents, audio_blobs, transcripts, edits, sections, tables, checklists, entities, templates, slot_values, integrations, exports, comments, audit_log).
+- [x] Setup NestJS API Gateway with REST /v1, OpenAPI 3.1, Zod validation, Problem+JSON, Idempotency-Key, RBAC, RLS.
+- [x] Implement WS gateway and SSE fallback.
+- [x] Implement WebRTC ingest session endpoint (`/live/session`) with tokens.
+- [x] Build asr-worker with WhisperX (GPU) and Vosk/Coqui fallback (CPU).
+- [x] Build punct-worker to clean transcripts with punctuation/casing/profanity mask.
+- [x] Build cmd-worker to parse structure/format/navigation commands.
+- [x] Build ner-worker for entities (people, orgs, dates, amounts, URLs).
+- [x] Build format-worker to apply structure ops (sections, tables, checklists).
+- [x] Build template-worker with slot filling logic from templates.
+- [x] Build export-worker for DOCX, PDF, MD/MDX, HTML.
+- [x] Build sync-worker for Notion, Google Docs, Confluence, Jira, Trello.
+- [x] Implement probe-worker to validate audio (duration, sample rate, channels).
+- [x] Implement moderation-worker for PII/profanity detection.
+- [x] Implement Realtime presence & cursor tracking.
+- [x] Implement Recorder component with Web Audio API, push-to-talk, VAD.
+- [x] Implement LiveTranscript component with token streaming, confidence colors.
+- [x] Implement StructurePanel with sections, drag reorder, formatting commands.
+- [x] Implement SlotEditor with validation of smart fields.
+- [x] Implement TableEditor/Grid for voice-created tables.
+- [x] Implement Templates management page with built-in + custom templates.
+- [x] Implement Exports page with format choices and sync to integrations.
+- [x] Implement Search page with full-text + semantic (pgvector) search.
+- [x] Implement Dashboard page with KPIs (dictations, docs created, export success).
+- [x] Implement Comments component with audio snippet anchors.
+- [x] Implement Version history & branching in documents.
+- [x] Add co-edit with presence indicators and soft locks.
+- [ ] Add CI/CD workflows: lint, typecheck, tests, docker build, deploy.
+- [ ] Add IaC Terraform modules (DB, Redis/NATS, S3, CDN, secrets).
+- [ ] Add Observability (OTel traces, Prometheus metrics, Sentry errors).
+- [ ] Add GPU autoscaling support for ASR workers.
+- [ ] Add Security hardening: TLS, signed URLs, RLS, audit log.
+- [ ] Add Unit tests: punctuation, command parser, slot validation.
+- [ ] Add Integration tests: record → transcribe → structure → export.
+- [ ] Add Contract tests: OpenAPI snapshots, schema validation.
+- [ ] Add E2E tests (Playwright): dictation → structured doc → export/sync.
+- [ ] Add Load tests: concurrent sessions (N=100).
+- [ ] Add Chaos tests: GPU worker crash, network drop, retry/backoff.
+- [ ] Add Security tests: RLS enforcement, signed URL expiry, audit trail completeness.
+- [ ] Deploy dev/staging/prod environments.

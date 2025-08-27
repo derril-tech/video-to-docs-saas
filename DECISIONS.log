@@ -1,0 +1,51 @@
+# DECISIONS.log
+
+## 2024-01-15 10:30:00 - Project Initialization
+- **Decision**: Scaffold monorepo with Next.js frontend, NestJS backend, Python workers
+- **Why**: Modern, scalable architecture with clear separation of concerns
+- **Files**: package.json, docker-compose.yml, apps/web/, apps/api/, apps/workers/
+
+## 2024-01-15 11:15:00 - Database Schema Design
+- **Decision**: PostgreSQL with comprehensive schema for video processing pipeline
+- **Why**: ACID compliance, JSON support, scalability for complex relationships
+- **Files**: apps/api/src/database/schema.sql
+
+## 2024-01-15 12:00:00 - API Design
+- **Decision**: RESTful API with OpenAPI 3.1, Zod validation, Problem+JSON
+- **Why**: Industry standard, excellent tooling, clear error handling
+- **Files**: apps/api/src/main.ts, apps/api/src/app.module.ts
+
+## 2024-01-15 13:30:00 - Worker Architecture
+- **Decision**: Microservices with NATS messaging, GPU support for ASR
+- **Why**: Scalability, fault tolerance, optimal performance for ML workloads
+- **Files**: apps/workers/*/main.py, docker-compose.yml
+
+## 2024-01-15 14:45:00 - Frontend Technology Stack
+- **Decision**: Next.js 14 with TypeScript, Mantine UI, Tailwind CSS
+- **Why**: Modern React framework, excellent DX, comprehensive UI library
+- **Files**: apps/web/package.json, apps/web/src/app/layout.tsx
+
+## 2024-01-15 15:20:00 - Real-time Communication
+- **Decision**: WebSocket gateway with SSE fallback for real-time updates
+- **Why**: Low latency, bidirectional communication, graceful degradation
+- **Files**: apps/api/src/gateway/, apps/web/src/components/LiveTranscript/
+
+## 2024-01-15 16:00:00 - Video Processing Pipeline
+- **Decision**: Multi-stage pipeline with specialized workers for each step
+- **Why**: Modularity, fault tolerance, independent scaling
+- **Files**: apps/workers/asr-worker/, apps/workers/punct-worker/, etc.
+
+## 2024-01-15 16:30:00 - Security Implementation
+- **Decision**: RBAC with RLS, signed URLs, audit logging
+- **Why**: Comprehensive security model, compliance ready
+- **Files**: apps/api/src/auth/, apps/api/src/database/rls.sql
+
+## 2024-01-15 17:00:00 - Phase 2 Completion
+- **Decision**: All core components implemented, moving to Phase 3 (Frontend Development)
+- **Why**: Backend foundation complete, ready for frontend integration
+- **Files**: All Phase 2 components completed
+
+## 2024-01-15 17:15:00 - Phase 3 Frontend Components
+- **Decision**: Created VideoUploader, ProcessingStatus, DocumentViewer, SlotEditor components
+- **Why**: Core UI components needed for video-to-docs workflow
+- **Files**: apps/web/src/components/*/
